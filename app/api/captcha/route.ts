@@ -14,12 +14,12 @@ export async function GET() {
   const userAgent =
     'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36';
 
-  // Attempt 1: Direct via Cloudflare Proxy (Bypass IP Block)
+  // Attempt 1: Direct eboardresults.com official captcha
   try {
     const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 8000); // Increased timeout to 8s
+    const timeoutId = setTimeout(() => controller.abort(), 8000);
 
-    const res = await fetch(`https://withered-mountain-9571.2flolgamer3-8-5.workers.dev/v2/captcha?t=${Date.now()}`, {
+    const res = await fetch(`https://eboardresults.com/v2/captcha?t=${Date.now()}`, {
       headers: {
         'User-Agent': userAgent,
         'Referer': 'https://eboardresults.com/v2/home',
@@ -30,7 +30,9 @@ export async function GET() {
     });
     clearTimeout(timeoutId);
 
-    if (res.ok) {
+    const contentType = res.headers.get('content-type') || '';
+
+    if (res.ok && contentType.includes('image')) {
       const setCookie = res.headers.get('set-cookie') || '';
       let session = '';
       const match = setCookie.match(/EBRSESSID2=([^;]+)/);
@@ -41,12 +43,12 @@ export async function GET() {
       }
 
       const buffer = await res.arrayBuffer();
-      if (buffer && buffer.byteLength > 100 && session) {
+      if (buffer && buffer.byteLength > 100) {
         const base64 = Buffer.from(buffer).toString('base64');
         return NextResponse.json(
           {
             success: true,
-            image: `data:image/jpeg;base64,${base64}`,
+            image: `data:${contentType};base64,${base64}`,
             session,
             source: 'eboardresults',
           },
@@ -55,7 +57,7 @@ export async function GET() {
       }
     }
   } catch (err) {
-    console.error('Proxy captcha fetch failed or timed out', err);
+    console.error('Direct captcha fetch failed or timed out', err);
   }
 
   return NextResponse.json(

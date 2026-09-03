@@ -78,7 +78,7 @@ export async function POST(req: NextRequest) {
     if (normalizedBoard === 'technical') normalizedBoard = 'tec';
     if (normalizedBoard === 'rajashai') normalizedBoard = 'rajshahi';
 
-    // Use Official eboardresults.com via Cloudflare Proxy
+    // Use Official eboardresults.com
     const postData = new URLSearchParams();
     postData.append('exam', String(exam).toLowerCase());
     postData.append('year', String(year));
@@ -93,7 +93,7 @@ export async function POST(req: NextRequest) {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 9000); // 9 seconds timeout for Vercel
 
-    const response = await fetch('https://withered-mountain-9571.2flolgamer3-8-5.workers.dev/v2/getres', {
+    const response = await fetch('https://eboardresults.com/v2/getres', {
       method: 'POST',
       headers: {
         'User-Agent': userAgent,
