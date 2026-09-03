@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Education Board Result - Web Based Result Publication System</title>
+  
+  <!-- Open Graph / Social Media Thumbnail Meta Tags -->
+  <meta property="og:title" content="Education Board Result - Web Based Result Publication System" />
+  <meta property="og:description" content="JSC/JDC/SSC/DAKHIL/HSC/ALIM AND EQUIVALENT EXAMINATION" />
+  <meta property="og:image" content="https://i.postimg.cc/KY18zfXB/downloadfile-(1).png" />
+  <meta property="og:type" content="website" />
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Education Board Result - Web Based Result Publication System" />
+  <meta name="twitter:description" content="JSC/JDC/SSC/DAKHIL/HSC/ALIM AND EQUIVALENT EXAMINATION" />
+  <meta name="twitter:image" content="https://i.postimg.cc/KY18zfXB/downloadfile-(1).png" />
+
+  <link rel="icon" type="image/png" href="https://i.postimg.cc/3JYXYKCZ/favicon-eboardresults-com-256x256.png" />
+  <link rel="shortcut icon" type="image/png" href="https://i.postimg.cc/3JYXYKCZ/favicon-eboardresults-com-256x256.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    select:focus, input:focus {
+      border-color: #00A859 !important;
+      outline: 0 !important;
+      box-shadow: 0 0 0 2px rgba(0, 168, 89, 0.25) !important;
+    }
+    @media print {
+      body { background: white !important; }
+      .no-print { display: none !important; }
+      #result-display { display: block !important; box-shadow: none !important; }
+    }
+  </style>
+</head>
+<body class="bg-[#f4f6f8] min-h-screen font-sans text-[#333] flex flex-col items-center pt-3 sm:pt-6 pb-10 px-2 sm:px-4">
+
+  <!-- Header Area -->
+  <header class="w-full max-w-3xl bg-[#00A859] rounded-[4px] py-3.5 px-4 sm:px-6 flex items-center mb-4 shadow-sm">
+    <img src="https://i.postimg.cc/KY18zfXB/downloadfile-(1).png" alt="Bangladesh Govt Logo" class="h-14 w-14 sm:h-16 sm:w-16 mr-3.5 sm:mr-5 bg-white rounded-full p-1 shrink-0 shadow-xs" />
+    <div class="text-white flex flex-col justify-center">
+      <h1 id="header-title" class="text-xs sm:text-lg font-bold tracking-normal leading-tight uppercase text-white">
+        WEB BASED RESULT PUBLICATION SYSTEM FOR EDUCATION BOARD
+      </h1>
+      <p id="header-subtitle" class="text-[10px] sm:text-xs font-medium tracking-normal mt-0.5 text-green-100 uppercase leading-snug">
+        JSC/JDC/SSC/DAKHIL/HSC/ALIM AND EQUIVALENT EXAMINATION
+      </p>
+    </div>
+  </header>
+
+  <!-- Full-Width Divider Line -->
+  <div class="w-full max-w-3xl border-b border-[#D8DDE2] mb-4"></div>
+
+  <!-- Form Container -->
+  <main class="w-full max-w-3xl bg-white border border-[#DCE1E7] rounded-[4px] shadow-sm flex flex-col overflow-hidden mb-6" id="form-container">
+    <div class="bg-[#eef2f5] px-4 sm:px-6 py-2.5 text-left text-xs sm:text-sm border-b border-[#DCE1E7] flex flex-wrap items-center justify-between gap-2">
+      <div class="text-[#444] font-medium" id="instruction-text">
+        Please provide the following information to view result
+      </div>
+      <div>
+        [ <button type="button" id="lang-toggle-btn" class="text-red-600 font-bold hover:underline focus:outline-none bg-transparent border-0 p-0 cursor-pointer text-xs">বাংলায় দেখুন</button> ]
+      </div>
+    </div>
+
+    <!-- Alert / Message Banner -->
+    <div id="alert-box" class="hidden mx-4 sm:mx-6 mt-4 p-3 rounded text-xs sm:text-sm font-medium border"></div>
+    
+    <form id="result-form" class="p-4 sm:p-6 space-y-3.5 sm:space-y-4">
+      <!-- Examination -->
+      <div class="grid grid-cols-1 sm:grid-cols-12 items-center gap-1.5 sm:gap-4">
+        <label id="label-examination" class="sm:col-span-4 text-xs sm:text-sm font-bold text-gray-700" for="examination">Examination</label>
+        <select id="examination" required class="sm:col-span-8 w-full p-2 border border-gray-300 rounded text-xs sm:text-sm bg-white transition">
+          <option value="ssc" selected>SSC/Dakhil/Equivalent</option>
+          <option value="hsc">HSC/Alim/Equivalent</option>
+          <option value="jsc">JSC/JDC</option>
+          <option value="dibs">DIBS (Diploma in Business Studies)</option>
+        </select>
+      </div>
+
+      <!-- Year -->
+      <div class="grid grid-cols-1 sm:grid-cols-12 items-center gap-1.5 sm:gap-4">
+        <label id="label-year" class="sm:col-span-4 text-xs sm:text-sm font-bold text-gray-700" for="year">Year</label>
+        <select id="year" required class="sm:col-span-8 w-full p-2 border border-gray-300 rounded text-xs sm:text-sm bg-white transition">
+          <option value="2026">2026</option>
+          <option value="2025">2025</option>
+          <option value="2024" selected>2024</option>
+          <option value="2023">2023</option>
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+          <option value="2020">2020</option>
+          <option value="2019">2019</option>
+          <option value="2018">2018</option>
+          <option value="2017">2017</option>
+          <option value="2016">2016</option>
+          <option value="2015">2015</option>
+          <option value="2014">2014</option>
+          <option value="2013">2013</option>
+          <option value="2012">2012</option>
+          <option value="2011">2011</option>
+          <option value="2010">2010</option>
+        </select>
+      </div>
+
+      <!-- Board -->
+      <div class="grid grid-cols-1 sm:grid-cols-12 items-center gap-1.5 sm:gap-4">
+        <label id="label-board" class="sm:col-span-4 text-xs sm:text-sm font-bold text-gray-700" for="board">Board</label>
+        <select id="board" required class="sm:col-span-8 w-full p-2 border border-gray-300 rounded text-xs sm:text-sm bg-white transition">
+          <option value="">Select One</option>
+          <option value="barisal">Barisal</option>
+          <option value="chittagong">Chattogram</option>
+          <option value="comilla">Cumilla</option>
+          <option value="dhaka" selected>Dhaka</option>
+          <option value="dinajpur">Dinajpur</option>
+          <option value="jessore">Jashore</option>
+          <option value="mymensingh">Mymensingh</option>
+          <option value="rajshahi">Rajshahi</option>
+          <option value="sylhet">Sylhet</option>
+          <option value="madrasah">Madrasah</option>
+          <option value="technical">Technical</option>
+        </select>
+      </div>
+
+      <!-- Result Type -->
+      <div class="grid grid-cols-1 sm:grid-cols-12 items-center gap-1.5 sm:gap-4">
+        <label id="label-result-type" class="sm:col-span-4 text-xs sm:text-sm font-bold text-red-600" for="result-type">Result Type</label>
+        <select id="result-type" required class="sm:col-span-8 w-full p-2 border border-gray-300 rounded text-xs sm:text-sm bg-white transition">
+          <option value="individual" selected>Individual Result</option>
+        </select>
+      </div>
+
+      <!-- Roll -->
+      <div class="grid grid-cols-1 sm:grid-cols-12 items-center gap-1.5 sm:gap-4">
+        <label id="label-roll" class="sm:col-span-4 text-xs sm:text-sm font-bold text-gray-700" for="roll">Roll Number</label>
+        <input type="number" id="roll" required placeholder="e.g. 123456" class="sm:col-span-8 w-full p-2 border border-gray-300 rounded text-xs sm:text-sm bg-white transition" />
+      </div>
+
+      <!-- Reg -->
+      <div class="grid grid-cols-1 sm:grid-cols-12 items-center gap-1.5 sm:gap-4">
+        <label id="label-reg" class="sm:col-span-4 text-xs sm:text-sm font-bold text-gray-700" for="reg">
+          Registration No <span class="text-xs font-normal text-gray-500">(Optional)</span>
+        </label>
+        <input type="number" id="reg" placeholder="e.g. 1234567890 (for full marksheet)" class="sm:col-span-8 w-full p-2 border border-gray-300 rounded text-xs sm:text-sm bg-white transition" />
+      </div>
+
+      <!-- Security Key (CAPTCHA) -->
+      <div class="grid grid-cols-1 sm:grid-cols-12 items-center gap-1.5 sm:gap-4 pt-2 border-t border-gray-100">
+        <label id="label-captcha" class="sm:col-span-4 text-xs sm:text-sm font-bold text-gray-700" for="captcha">
+          Security Key (4 digits)
+        </label>
+        <div class="sm:col-span-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+          <!-- Captcha Image Container -->
+          <div class="flex items-center gap-2">
+            <div id="captcha-wrapper" class="relative h-10 w-32 bg-gray-100 border border-gray-300 rounded flex items-center justify-center overflow-hidden shrink-0 shadow-inner">
+              <span id="captcha-loading" class="text-[11px] text-gray-500 animate-pulse">Loading...</span>
+              <img id="captcha-img" src="" alt="Security Key" class="hidden h-full w-full object-cover cursor-pointer" title="Click to reload" />
+            </div>
+            <button type="button" id="reload-captcha-btn" class="text-xs text-blue-600 hover:text-blue-800 font-semibold px-2 py-1.5 bg-blue-50 hover:bg-blue-100 rounded border border-blue-200 flex items-center gap-1 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+              </svg>
+              <span id="btn-reload-text">Reload</span>
+            </button>
+          </div>
+          <!-- Input Box -->
+          <input type="text" id="captcha" maxlength="6" required autocomplete="off" placeholder="Type 4 digits" class="flex-1 p-2 border border-gray-300 rounded text-xs sm:text-sm font-mono tracking-widest text-center uppercase transition bg-white" />
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="flex items-center justify-center gap-3 pt-4 border-t border-gray-100">
+        <button type="submit" id="submit-btn" class="px-6 py-2 bg-[#00A859] hover:bg-[#008f4c] text-white text-xs sm:text-sm font-bold rounded transition shadow-xs flex items-center justify-center min-w-[130px]">
+          <span id="submit-btn-text">Get Result</span>
+        </button>
+        <button type="button" id="reset-btn" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 text-xs sm:text-sm font-medium rounded transition">
+          <span id="reset-btn-text">Reset</span>
+        </button>
+      </div>
+    </form>
+  </main>
+
+  <!-- Result Display Container -->
+  <main class="w-full max-w-3xl bg-white border border-[#DCE1E7] rounded-[4px] p-4 sm:p-6 mb-6 hidden shadow-sm" id="result-display">
+    <div class="flex items-center justify-between border-b pb-3 mb-4">
+      <div>
+        <h2 id="res-exam-title" class="text-sm sm:text-base font-bold text-gray-800 uppercase leading-snug">
+          Examination Result
+        </h2>
+        <p class="text-xs text-gray-500" id="res-timestamp">Education Board Official Marksheet</p>
+      </div>
+      <div class="flex items-center gap-2 no-print">
+        <button type="button" id="print-btn" class="px-3 py-1.5 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded text-xs font-semibold border border-gray-300 flex items-center gap-1 transition">
+          🖨️ <span id="print-btn-text">Print</span>
+        </button>
+        <button type="button" class="search-again-trigger px-3.5 py-1.5 bg-[#00A859] hover:bg-[#008f4c] text-white rounded text-xs font-bold transition">
+          🔍 <span id="search-again-text">Search Again</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Student Information Summary Table -->
+    <div class="border border-[#CCCCCC] rounded-[3px] overflow-hidden mb-5">
+      <div class="bg-[#00A859] px-3.5 py-2 text-white font-bold text-xs sm:text-sm uppercase tracking-wide">
+        Student Information Summary
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs sm:text-sm border-collapse">
+          <tbody>
+            <tr class="border-b border-gray-200 bg-[#f9fafb]">
+              <td class="py-2 px-3 font-semibold text-gray-600 w-1/4">Roll No</td>
+              <td class="py-2 px-3 font-bold text-gray-900 w-1/4" id="res-roll"></td>
+              <td class="py-2 px-3 font-semibold text-gray-600 w-1/4">Registration No</td>
+              <td class="py-2 px-3 font-bold text-gray-900 w-1/4" id="res-reg"></td>
+            </tr>
+            <tr class="border-b border-gray-200 bg-white">
+              <td class="py-2 px-3 font-semibold text-gray-600">Name of Student</td>
+              <td class="py-2 px-3 font-bold text-gray-900 uppercase" colspan="3" id="res-name"></td>
+            </tr>
+            <tr class="border-b border-gray-200 bg-[#f9fafb]">
+              <td class="py-2 px-3 font-semibold text-gray-600">Father's Name</td>
+              <td class="py-2 px-3 font-medium text-gray-800 uppercase" colspan="3" id="res-father"></td>
+            </tr>
+            <tr class="border-b border-gray-200 bg-white">
+              <td class="py-2 px-3 font-semibold text-gray-600">Mother's Name</td>
+              <td class="py-2 px-3 font-medium text-gray-800 uppercase" colspan="3" id="res-mother"></td>
+            </tr>
+            <tr class="border-b border-gray-200 bg-[#f9fafb]">
+              <td class="py-2 px-3 font-semibold text-gray-600">Board</td>
+              <td class="py-2 px-3 font-bold text-gray-900 uppercase" id="res-board"></td>
+              <td class="py-2 px-3 font-semibold text-gray-600">Group / Trade</td>
+              <td class="py-2 px-3 font-medium text-gray-800 uppercase" id="res-group"></td>
+            </tr>
+            <tr class="border-b border-gray-200 bg-white">
+              <td class="py-2 px-3 font-semibold text-gray-600">Result (GPA)</td>
+              <td class="py-2 px-3 font-extrabold text-emerald-700 text-sm sm:text-base" id="res-gpa"></td>
+              <td class="py-2 px-3 font-semibold text-gray-600">Session</td>
+              <td class="py-2 px-3 font-medium text-gray-800" id="res-session"></td>
+            </tr>
+            <tr class="bg-[#f9fafb]">
+              <td class="py-2 px-3 font-semibold text-gray-600">Institute</td>
+              <td class="py-2 px-3 font-medium text-gray-800" colspan="3" id="res-institute"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Subject-Wise Grade Sheet Table -->
+    <div id="subjects-container" class="border border-[#CCCCCC] rounded-[3px] overflow-hidden mb-4 hidden">
+      <div class="bg-gray-100 border-b border-gray-300 px-3.5 py-2 font-bold text-xs sm:text-sm text-gray-700 uppercase">
+        Subject-Wise Grade / Marksheet
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-xs sm:text-sm border-collapse text-left">
+          <thead class="bg-gray-50 border-b border-gray-200 text-gray-600 font-semibold">
+            <tr>
+              <th class="py-2 px-3 w-24">Code</th>
+              <th class="py-2 px-3">Subject Name</th>
+              <th class="py-2 px-3 text-right w-28">Grade</th>
+            </tr>
+          </thead>
+          <tbody id="subjects-body" class="divide-y divide-gray-200"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="flex justify-center mt-6 no-print">
+      <button type="button" class="search-again-trigger px-5 py-2 bg-[#00A859] hover:bg-[#008f4c] text-white font-bold rounded text-xs sm:text-sm transition shadow-xs">
+        🔍 <span id="bottom-search-again">Check Another Result</span>
+      </button>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="w-full max-w-3xl text-center text-xs text-gray-500 py-3 no-print">
+    &copy; <span id="year-copy">2026</span> Ministry of Education, Bangladesh. All Rights Reserved.
+  </footer>
+
+  <script>
+    // State
+    let currentSession = '';
+    let currentSource = '';
+    let isBangla = false;
+
+    // Translations Dictionary
+    const i18n = {
+      en: {
+        headerTitle: 'WEB BASED RESULT PUBLICATION SYSTEM FOR EDUCATION BOARD',
+        headerSubtitle: 'JSC/JDC/SSC/DAKHIL/HSC/ALIM AND EQUIVALENT EXAMINATION',
+        instruction: 'Please provide the following information to view result',
+        langBtn: 'বাংলায় দেখুন',
+        labelExam: 'Examination',
+        labelYear: 'Year',
+        labelBoard: 'Board',
+        labelResultType: 'Result Type',
+        labelRoll: 'Roll Number',
+        labelReg: 'Registration No (Optional)',
+        labelCaptcha: 'Security Key (4 digits)',
+        submitText: 'Get Result',
+        processing: 'Processing...',
+        resetText: 'Reset',
+        reloadText: 'Reload',
+        printText: 'Print',
+        searchAgain: 'Search Again',
+        checkAnother: 'Check Another Result',
+        captchaPlaceholder: 'Type 4 digits',
+        captchaLoading: 'Loading...'
+      },
+      bn: {
+        headerTitle: 'ওয়েব ভিত্তিক ফলাফল প্রকাশনা ব্যবস্থা - শিক্ষা বোর্ড',
+        headerSubtitle: 'জেএসসি / জেডিসি / এসএসসি / দাখিল / এইচএসসি / আলিম ও সমমান পরীক্ষা',
+        instruction: 'ফলাফল দেখতে অনুগ্রহ করে নিচের তথ্যগুলো পূরণ করুন',
+        langBtn: 'View in English',
+        labelExam: 'পরীক্ষার নাম',
+        labelYear: 'পরীক্ষার বছর',
+        labelBoard: 'শিক্ষা বোর্ড',
+        labelResultType: 'ফলাফলের ধরন',
+        labelRoll: 'রোল নম্বর',
+        labelReg: 'রেজিস্ট্রেশন নম্বর (ঐচ্ছিক)',
+        labelCaptcha: 'সিকিউরিটি কী (৪ ডিজিট)',
+        submitText: 'ফলাফল দেখুন',
+        processing: 'অনুসন্ধান হচ্ছে...',
+        resetText: 'মুছে ফেলুন',
+        reloadText: 'নতুন কোড',
+        printText: 'প্রিন্ট করুন',
+        searchAgain: 'পুনরায় খুঁজুন',
+        checkAnother: 'অন্য ফলাফল দেখুন',
+        captchaPlaceholder: '৪ ডিজিট লিখুন',
+        captchaLoading: 'লোড হচ্ছে...'
+      }
+    };
+
+    function setLanguage(toBn) {
+      isBangla = toBn;
+      const t = isBangla ? i18n.bn : i18n.en;
+      document.getElementById('header-title').textContent = t.headerTitle;
+      document.getElementById('header-subtitle').textContent = t.headerSubtitle;
+      document.getElementById('instruction-text').textContent = t.instruction;
+      document.getElementById('lang-toggle-btn').textContent = t.langBtn;
+      document.getElementById('label-examination').textContent = t.labelExam;
+      document.getElementById('label-year').textContent = t.labelYear;
+      document.getElementById('label-board').textContent = t.labelBoard;
+      document.getElementById('label-result-type').textContent = t.labelResultType;
+      document.getElementById('label-roll').textContent = t.labelRoll;
+      document.getElementById('label-reg').innerHTML = t.labelReg;
+      document.getElementById('label-captcha').textContent = t.labelCaptcha;
+      document.getElementById('submit-btn-text').textContent = t.submitText;
+      document.getElementById('reset-btn-text').textContent = t.resetText;
+      document.getElementById('btn-reload-text').textContent = t.reloadText;
+      document.getElementById('print-btn-text').textContent = t.printText;
+      document.getElementById('search-again-text').textContent = t.searchAgain;
+      document.getElementById('bottom-search-again').textContent = t.checkAnother;
+      document.getElementById('captcha').placeholder = t.captchaPlaceholder;
+      document.getElementById('captcha-loading').textContent = t.captchaLoading;
+    }
+
+    document.getElementById('lang-toggle-btn').addEventListener('click', () => {
+      setLanguage(!isBangla);
+    });
+
+    // Alert helper
+    function showAlert(msg, isError = true) {
+      const box = document.getElementById('alert-box');
+      box.textContent = msg;
+      box.className = isError
+        ? 'mx-4 sm:mx-6 mt-4 p-3 rounded text-xs sm:text-sm font-medium border bg-red-50 text-red-700 border-red-200'
+        : 'mx-4 sm:mx-6 mt-4 p-3 rounded text-xs sm:text-sm font-medium border bg-emerald-50 text-emerald-700 border-emerald-200';
+      box.classList.remove('hidden');
+    }
+
+    function hideAlert() {
+      document.getElementById('alert-box').classList.add('hidden');
+    }
+
+    // Load Captcha
+    async function loadCaptcha() {
+      const wrapper = document.getElementById('captcha-wrapper');
+      const img = document.getElementById('captcha-img');
+      const loading = document.getElementById('captcha-loading');
+
+      loading.classList.remove('hidden');
+      img.classList.add('hidden');
+      img.src = '';
+
+      try {
+        const res = await fetch('/api/captcha?t=' + Date.now(), {
+          cache: 'no-store',
+          headers: { 'Pragma': 'no-cache', 'Cache-Control': 'no-cache' }
+        });
+        const data = await res.json();
+
+        if (data.success && data.image) {
+          img.src = data.image;
+          currentSession = data.session || '';
+          currentSource = data.source || '';
+          
+          img.onload = () => {
+            loading.classList.add('hidden');
+            img.classList.remove('hidden');
+          };
+        } else {
+          loading.textContent = 'Failed. Click reload.';
+        }
+      } catch (err) {
+        console.error('Failed to load captcha', err);
+        loading.textContent = 'Error. Click reload.';
+      }
+    }
+
+    // Event listeners for captcha reload
+    document.getElementById('reload-captcha-btn').addEventListener('click', () => {
+      loadCaptcha();
+      document.getElementById('captcha').value = '';
+      document.getElementById('captcha').focus();
+    });
+    document.getElementById('captcha-img').addEventListener('click', () => {
+      loadCaptcha();
+      document.getElementById('captcha').value = '';
+      document.getElementById('captcha').focus();
+    });
+
+    // Reset Form
+    document.getElementById('reset-btn').addEventListener('click', () => {
+      document.getElementById('result-form').reset();
+      hideAlert();
+      loadCaptcha();
+    });
+
+    // Print Result
+    document.getElementById('print-btn').addEventListener('click', () => {
+      window.print();
+    });
+
+    // Search Again
+    document.querySelectorAll('.search-again-trigger').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.getElementById('result-display').classList.add('hidden');
+        document.getElementById('form-container').classList.remove('hidden');
+        document.getElementById('captcha').value = '';
+        hideAlert();
+        loadCaptcha();
+      });
+    });
+
+    // Form Submit
+    document.getElementById('result-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      hideAlert();
+
+      const submitBtn = document.getElementById('submit-btn');
+      const submitBtnText = document.getElementById('submit-btn-text');
+      const originalText = submitBtnText.textContent;
+
+      submitBtn.disabled = true;
+      submitBtnText.textContent = isBangla ? i18n.bn.processing : i18n.en.processing;
+
+      const payload = {
+        board: document.getElementById('board').value,
+        exam: document.getElementById('examination').value,
+        year: document.getElementById('year').value,
+        roll: document.getElementById('roll').value.trim(),
+        reg: document.getElementById('reg').value.trim(),
+        captcha: document.getElementById('captcha').value.trim(),
+        session: currentSession,
+        source: currentSource
+      };
+
+      try {
+        const res = await fetch('/api/get-result', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+
+        if (res.ok && data.success && data.result) {
+          const r = data.result;
+
+          // Set Exam Details Header
+          const examSelect = document.getElementById('examination');
+          const examName = examSelect.options[examSelect.selectedIndex].text;
+          document.getElementById('res-exam-title').textContent = `${examName} Result - ${payload.year}`;
+
+          // Set Info
+          document.getElementById('res-roll').textContent = r.roll || payload.roll;
+          document.getElementById('res-reg').textContent = r.reg || payload.reg || 'N/A';
+          document.getElementById('res-name').textContent = r.name || 'N/A';
+          document.getElementById('res-father').textContent = r.father || 'N/A';
+          document.getElementById('res-mother').textContent = r.mother || 'N/A';
+          document.getElementById('res-board').textContent = (r.board || payload.board).toUpperCase();
+          document.getElementById('res-group').textContent = r.group || 'N/A';
+          document.getElementById('res-gpa').textContent = r.gpa || 'PASSED';
+          document.getElementById('res-session').textContent = r.session || 'N/A';
+          document.getElementById('res-institute').textContent = r.institute || 'N/A';
+
+          // Set Subjects if available
+          const subjectsContainer = document.getElementById('subjects-container');
+          const subjectsBody = document.getElementById('subjects-body');
+          subjectsBody.innerHTML = '';
+
+          if (r.subjects && Array.isArray(r.subjects) && r.subjects.length > 0) {
+            r.subjects.forEach(sub => {
+              const tr = document.createElement('tr');
+              tr.className = 'hover:bg-gray-50';
+              tr.innerHTML = `
+                <td class="py-2 px-3 font-mono text-gray-600">${sub.code || ''}</td>
+                <td class="py-2 px-3 font-medium text-gray-800 uppercase">${sub.name || ''}</td>
+                <td class="py-2 px-3 font-bold text-gray-900 text-right">${sub.grade || ''}</td>
+              `;
+              subjectsBody.appendChild(tr);
+            });
+            subjectsContainer.classList.remove('hidden');
+          } else {
+            subjectsContainer.classList.add('hidden');
+          }
+
+          // Switch views
+          document.getElementById('form-container').classList.add('hidden');
+          document.getElementById('result-display').classList.remove('hidden');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          // Error handling
+          const errorMsg = data.error || 'Result not found or verification failed. Please check the information.';
+          showAlert(errorMsg, true);
+
+          // If security key / captcha failed, reload a fresh one and refocus
+          if (data.isCaptchaError || errorMsg.toLowerCase().includes('captcha') || errorMsg.toLowerCase().includes('security key')) {
+            loadCaptcha();
+            document.getElementById('captcha').value = '';
+            document.getElementById('captcha').focus();
+          }
+        }
+      } catch (err) {
+        console.error('Request failed', err);
+        showAlert('Could not connect to the education board server. Please try again.', true);
+        loadCaptcha();
+      } finally {
+        submitBtn.disabled = false;
+        submitBtnText.textContent = originalText;
+      }
+    });
+
+    // Initialize captcha on load
+    loadCaptcha();
+  </script>
+</body>
+</html>

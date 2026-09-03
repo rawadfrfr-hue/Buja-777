@@ -1,0 +1,6 @@
+{
+  "name": "Education Board Result",
+  "description": "Web Based Result Publication System for Bangladesh Education Board (JSC/JDC/SSC/DAKHIL/HSC/ALIM/Equivalent).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
